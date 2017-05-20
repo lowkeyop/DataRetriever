@@ -17,7 +17,7 @@ if not os.path.exists(baseDir):
 	os.makedirs(baseDir)
 
 with open(filePath, "a") as output:
-	subprocess.call([ "speedtest-cli", "--json"], stdout=output);
+	subprocess.call([ "speedtest-cli", "--json", "--share"], stdout=output);
 	output.write(",")
 
 print "Data gathering complete"
