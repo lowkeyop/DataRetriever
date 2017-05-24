@@ -10,11 +10,12 @@ baseDir="/share/data/networkData/"
 fileName = "speedTest" + timeStamp + ".json"
 filePath = baseDir + fileName
 
-print "Getting speed test data"
-
 if not os.path.exists(baseDir):
 	print "creating missing directory to store data"
 	os.makedirs(baseDir)
+	print "directory created"
+	
+print "Getting speed test data"
 
 with open(filePath, "a") as output:
 	subprocess.call([ "speedtest-cli", "--json", "--share"], stdout=output);
